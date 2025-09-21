@@ -1,0 +1,240 @@
+/* ========= Root Colors & Theme ========= */
+:root {
+    --bg: #fffff0;         /* Ivory background #fffff0*/
+    --card: #f8f8f8;       /* Slightly darker for cards */
+    --text: #000000;       /* Black text */
+    --muted: #333333;      /* Dark gray for secondary text */
+    --accent: #0066cc;     /* Blue accent color */
+    --accent-hover: #004c99;
+    --radius: 12px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+  }
+  
+  /* ========= Base ========= */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ========= Header ========= */
+  header {
+    background: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header .logo {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  nav a {
+    color: var(--text);
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 6px 10px;
+    border-radius: var(--radius);
+  }
+  nav a.active,
+  nav a:hover {
+    background: var(--accent);
+    color: #ffffff;
+  }
+  
+  /* ========= Container ========= */
+  .container {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    animation: fadeIn 0.6s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ========= Profile Section ========= */
+  .profile {
+    text-align: center;
+  }
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  .profile-pic:hover {
+    transform: scale(1.20);
+  }
+  .profile h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .profile p {
+    color: var(--muted);
+    margin: 4px 0;
+    font-size: 16px;
+  }
+  
+  /* ========= Content Headings ========= */
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent);
+    padding-left: 12px;
+  }
+  h2 {
+    font-size: 22px;
+    margin: 20px 0 10px;
+    color: var(--accent);
+  }
+  
+  /* ========= Lists ========= */
+  ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  ul li {
+    margin: 10px 0;
+    padding: 12px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  ul li:hover {
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-3px);
+  }
+  
+  /* ========= Footer ========= */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    color: var(--muted);
+    margin-top: 40px;
+    font-size: 14px;
+    box-shadow: var(--shadow);
+  }
+  
+  /* ========= Responsive ========= */
+  @media(max-width: 768px) {
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 5px 6px;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  /* ===== Education List Hover Effect ===== */
+.edu-list {
+    list-style: none;
+    padding: 0;
+  }
+  .edu-list li {
+    position: relative;
+    margin: 15px 0;
+    padding: 14px 16px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  .edu-list li:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateX(5px);
+  }
+  .edu-list .grade {
+    position: absolute;
+    right: -250px;            /* Place on right side */
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: var(--transition);
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .edu-list li:hover .grade {
+    opacity: 1;
+    right: -135px;            /* Slide in when hovered */
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--accent);
+  }
+  .logo-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    box-shadow: var(--shadow);
+  }
+  li a.project-link {
+    position: absolute;
+    right: -150px; /* off-screen initially */
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  /* Show link on hover */
+  li:hover a.project-link {
+    right: -165px; /* moves into view */
+    opacity: 1;
+  }
+
+  li strong {
+    font-size: 18px;
+  }
+
+  li:hover strong {
+    color: #007bff;
+  }
+  
