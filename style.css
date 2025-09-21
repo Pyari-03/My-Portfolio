@@ -160,7 +160,7 @@
     }
   }
   /* ===== Education List Hover Effect ===== */
-.edu-list {
+  .edu-list {
     list-style: none;
     padding: 0;
   }
@@ -176,27 +176,33 @@
   .edu-list li:hover {
     background: var(--accent);
     color: #fff;
-    transform: translateX(5px);
+    transform: translateY(-3px);
   }
+  
+  /* Grade badge hidden initially */
   .edu-list .grade {
     position: absolute;
-    right: -250px;            /* Place on right side */
-    top: 50%;
-    transform: translateY(-50%);
+    left: 16px;               /* aligned with text */
+    top: 100%;                /* below the li */
+    margin-top: 8px;
     background: var(--accent);
     color: #fff;
     padding: 6px 12px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     opacity: 0;
-    transition: var(--transition);
+    transform: translateY(-10px);  /* start slightly above */
+    transition: all 0.3s ease;
     white-space: nowrap;
     font-size: 14px;
   }
+  
+  /* Show grade on hover */
   .edu-list li:hover .grade {
     opacity: 1;
-    right: -135px;            /* Slide in when hovered */
+    transform: translateY(0);  /* slide down */
   }
+  
   .logo {
     display: flex;
     align-items: center;
@@ -213,30 +219,39 @@
     border: 2px solid var(--accent);
     box-shadow: var(--shadow);
   }
+  li {
+    position: relative; /* Ensure the link positions relative to the li */
+    margin-bottom: 20px;
+  }
+  
+  /* Project link hidden by default */
   li a.project-link {
     position: absolute;
-    right: -150px; /* off-screen initially */
-    top: 0;
+    left: 0;            /* aligned with the text */
+    top: 100%;          /* placed just below the li */
+    margin-top: 8px;    /* little space */
     opacity: 0;
+    transform: translateY(-10px); /* start slightly above */
     transition: all 0.3s ease;
     font-weight: bold;
     color: #007bff;
     text-decoration: none;
   }
-
+  
   /* Show link on hover */
   li:hover a.project-link {
-    right: -165px; /* moves into view */
     opacity: 1;
+    transform: translateY(0); /* slide down into place */
   }
-
+  
+  /* Style project title */
   li strong {
     font-size: 18px;
   }
-
   li:hover strong {
     color: #007bff;
   }
+  /* ===== Hamburger Menu ===== */
 .menu {
     position: relative;
     cursor: pointer;
@@ -289,4 +304,3 @@
     display: block;
   }
   
-
