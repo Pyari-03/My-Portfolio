@@ -237,4 +237,56 @@
   li:hover strong {
     color: #007bff;
   }
+  /* ===== Hamburger Menu ===== */
+.menu {
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .bar {
+    width: 28px;
+    height: 3px;
+    background: var(--text);
+    margin: 5px 0;
+    transition: var(--transition);
+    border-radius: 2px;
+  }
+  
+  /* Dropdown hidden by default */
+  .dropdown {
+    list-style: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: none;
+    padding: 8px 0;
+    min-width: 180px;
+    z-index: 100;
+  }
+  
+  .dropdown li {
+    padding: 10px 15px;
+  }
+  
+  .dropdown li a {
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    transition: var(--transition);
+  }
+  
+  .dropdown li a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+  }
+  
+  /* Show when active (via JS toggle) */
+  .menu.active .dropdown {
+    display: block;
+  }
   
