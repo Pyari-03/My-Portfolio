@@ -237,7 +237,6 @@
   li:hover strong {
     color: #007bff;
   }
-  /* ===== Hamburger Menu ===== */
 .menu {
     position: relative;
     cursor: pointer;
@@ -290,3 +289,4 @@
     display: block;
   }
   
+
