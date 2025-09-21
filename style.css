@@ -303,4 +303,73 @@
   .menu.active .dropdown {
     display: block;
   }
+  /* ===== Certifications Page ===== */
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cert-list li {
+    margin: 15px 0;
+    padding: 14px 16px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    line-height: 1.6;
+    transition: var(--transition);
+    word-wrap: break-word;  /* Long links wrap on small screens */
+  }
+  
+  .cert-list li a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cert-list li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== Responsive Adjustments ===== */
+  @media (max-width: 992px) {
+    header {
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    nav {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      margin: 5px 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo {
+      flex-direction: column;
+      text-align: center;
+    }
+    .logo-pic {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 6px;
+    }
+    .container {
+      padding: 20px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 22px;
+    }
+    .cert-list li {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
   
